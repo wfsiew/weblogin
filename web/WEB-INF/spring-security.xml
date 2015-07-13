@@ -20,14 +20,14 @@
 		<csrf/>
 	</http>
 
-	<authentication-manager id="dao-auth">
-		<authentication-provider user-service-ref="userDetailsService">
+	<authentication-manager>
+		<authentication-provider ref="customAuthenticationProvider">
 <!-- 			<user-service> -->
 <!-- 				<user name="mkyong" password="123456" authorities="ROLE_USER" /> -->
 <!-- 			</user-service> -->
 		</authentication-provider>
 	</authentication-manager>
 	
-	<beans:bean id="userDetailsService" class="app.model.AuthServiceDAO" />
+	<beans:bean id="customAuthenticationProvider" class="weblogin.model.CustomAuthenticationProvider" />
 
 </beans:beans>
